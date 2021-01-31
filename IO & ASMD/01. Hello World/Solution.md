@@ -3,7 +3,7 @@
 Hello World!를 출력하시오.
 
 ## 해결 과정
-main() 함수 안에 String output method인 `System.out.println()`를 이용햐어 Hello World! 를 출력한다.
+main() 함수 안에 String output method인 `System.out.println()`를 이용하여 Hello World! 를 출력한다.
 
 ```Java
 public class Main {

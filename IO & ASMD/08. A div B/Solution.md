@@ -1,0 +1,70 @@
+# A, B을 입력받아 A / B의 결과값 출력
+## 문제
+두 정수 A와 B를 입력받은 다음, A/B를 출력하는 프로그램을 작성하시오.
+
+첫째 줄에 A와 B가 주어진다. (0 < A, B < 10)
+
+첫째 줄에 A/B를 출력한다. 실제 정답과 출력값의 절대오차 또는 상대오차가 $10^{-9}$ 이하이면 정답이다.
+
+## 해결 과정
+사용자로부터 어떤 값(정수, 실수, 단어, 줄단위의 String)을 입력받기 위해서는 `Scanner 클래스`가 필요하다.
+
+Scanner를 사용하기 위해 `java.util` 패키지에 포함되어 있는 Scanner 클래스를 `import` 한다.
+
+```Java
+imort java.util.Scanner;
+```
+
+호출한 Scanner 클래스를 사용하기 위해 main() 안에 `객체`를 생성한다.
+`System.in`에 입력한 값을 `바이트 단위`로 읽는다.
+
+```Java
+Scanner sc = new Scanner(System.in);
+```
+
+A, B 두 개의 값을 객체 sc를 이용하여 사용자로부터 입력 받는다. 
+이 때 실수 값 계산을 해야하므로 `nextDouble()` 메소드를 사용한다.
+
+```Java
+int A = sc.nextDouble();
+int B = sc.nextDouble();
+```
+
+`System.out.println()`을 이용하여 A / B 값을 출력한다. 문자열이 아니므로 연산을 `큰따옴표("")`로 묶지 않도록 주의한다.
+
+```Java
+System.out.println(A / B);
+```
+
+---
+
+### 주의사항
+$10^{-9}$ 오차 범위 표시 때문에 `printf()`를 사용하면
+```Java
+System.out.printf("%.9f", A/B);
+```
+소수 9번째까지 표시하지 않아도 되는 결과도 0을 채워서 출력하므로 **지양**하는 것이 좋다.
+
+
+
+---
+
+## 전체 코드
+
+```Java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String [] args) {
+        // 사용자로부터 값을 입력받기 위한 Scanner 클래스 객체 생성
+        Scanner sc = new Scanner(System.in);
+
+        // A와 B의 값을 사용자로부터 입력 받음
+        int A = sc.nextDouble();
+        int B = sc.nextDouble();
+
+        // A / B의 결과값 출력
+        System.out.println(A / B);
+    }
+}
+```
